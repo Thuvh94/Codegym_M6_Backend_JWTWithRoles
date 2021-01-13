@@ -10,7 +10,7 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
     private String username;
 
@@ -20,4 +20,5 @@ public class User {
 
 //    @ManyToMany(fetch = FetchType.EAGER)
 //    private Set<Role> roles;
+
 }
