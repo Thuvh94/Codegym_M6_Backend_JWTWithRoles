@@ -18,6 +18,6 @@ public class User {
 
     private String fullName;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Role> roles;
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    private Set<Role> roles;
 }

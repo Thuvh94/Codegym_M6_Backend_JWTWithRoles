@@ -16,37 +16,37 @@ public class UserPrinciple implements UserDetails {
     private String password;
 
 
-    private Collection<? extends GrantedAuthority> roles;
+//    private Collection<? extends GrantedAuthority> roles;
 
-    public UserPrinciple(Long id, String username, String password, Collection<? extends GrantedAuthority> roles) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.roles = roles;
-    }
+//    public UserPrinciple(Long id, String username, String password, Collection<? extends GrantedAuthority> roles) {
+//        this.id = id;
+//        this.username = username;
+//        this.password = password;
+////        this.roles = roles;
+//    }
 
-    public UserPrinciple(Long id, String username, String password, String fullName) {
+    public UserPrinciple(Long id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
     }
 
     public static UserPrinciple build(User user){
-        List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
-                new SimpleGrantedAuthority(role.getName())
-        ).collect(Collectors.toList());
+//        List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
+//                new SimpleGrantedAuthority(role.getName())
+//        ).collect(Collectors.toList());
 
         return new UserPrinciple(
                 user.getId(),
                 user.getUsername(),
-                user.getPassword(),
-                authorities
+                user.getPassword()
+//                authorities
         );
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles;
+        return null;
     }
 
     @Override
