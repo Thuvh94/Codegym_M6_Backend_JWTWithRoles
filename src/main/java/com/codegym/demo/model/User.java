@@ -3,6 +3,7 @@ package com.codegym.demo.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
 @Entity
@@ -12,13 +13,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
+    @NotEmpty
     private String username;
 
+    @NotEmpty
+//    @Size(min = 6, max = 8)
     private String password;
 
     private String fullName;
 
-//    @ManyToMany(fetch = FetchType.EAGER)
-//    private Set<Role> roles;
+    @NotEmpty
+    private String phone;
+
+    private String address;
+
+    private String email;
+
+    private String avatar;
 
 }
