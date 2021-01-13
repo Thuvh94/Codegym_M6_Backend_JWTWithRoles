@@ -13,15 +13,6 @@ public class UserPrinciple implements UserDetails {
     private String password;
 
 
-//    private Collection<? extends GrantedAuthority> roles;
-
-//    public UserPrinciple(Long id, String username, String password, Collection<? extends GrantedAuthority> roles) {
-//        this.id = id;
-//        this.username = username;
-//        this.password = password;
-////        this.roles = roles;
-//    }
-
     public UserPrinciple(Long id, String username, String password) {
         this.userId = id;
         this.username = username;
@@ -29,15 +20,11 @@ public class UserPrinciple implements UserDetails {
     }
 
     public static UserPrinciple build(User user){
-//        List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
-//                new SimpleGrantedAuthority(role.getName())
-//        ).collect(Collectors.toList());
 
         return new UserPrinciple(
                 user.getUserId(),
                 user.getUsername(),
                 user.getPassword()
-//                authorities
         );
     }
 

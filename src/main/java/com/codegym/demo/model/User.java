@@ -17,7 +17,6 @@ public class User {
     private String username;
 
     @NotEmpty
-//    @Size(min = 6, max = 8)
     private String password;
 
     private String fullName;
