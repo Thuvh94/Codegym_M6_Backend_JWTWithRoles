@@ -1,15 +1,12 @@
 package com.codegym.demo.model;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class UserPrinciple implements UserDetails {
-    private Long id;
+    private Long userId;
 
     private String username;
 
@@ -26,7 +23,7 @@ public class UserPrinciple implements UserDetails {
 //    }
 
     public UserPrinciple(Long id, String username, String password) {
-        this.id = id;
+        this.userId = id;
         this.username = username;
         this.password = password;
     }

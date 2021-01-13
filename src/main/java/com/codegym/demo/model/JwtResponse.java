@@ -7,7 +7,7 @@ import java.util.Collection;
 
 @Data
 public class JwtResponse {
-    private Long id;
+    private Long userId;
     private String token;
     private String type = "Bearer";
     private String username;
